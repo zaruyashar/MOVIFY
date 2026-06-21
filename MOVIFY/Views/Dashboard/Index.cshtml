@@ -3,7 +3,6 @@
     ViewData["Title"] = "Dashboard";
 }
 
-<!-- Rendered-body title & subtitle -->
 <div class="page-breadcrumb">
     <div class="row">
         <div class="col-7 align-self-center">
@@ -20,74 +19,37 @@
         </div>
     </div>
 </div>
-<!-- End of title & subtitle -->
 
-
-<!-- Container fluid  -->
 <div class="container-fluid">
-    <!-- Sales - pink card at the top-->
     <div class="row">
         <div class="col-md-12">
             <div class="card bg-gradient-primary sales-details">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-lg-3 col-md-6">
+                        <div class="col-lg-4 col-md-6">
                             <div class="d-flex p-3">
                                 <div>
-                                    <i class="text-white op-7" data-feather="shield"></i>
-                                    <span class="text-white op-7 d-block my-3">Profit</span>
-                                    <h3 class="text-white mb-0">5,600</h3>
-                                </div>
-                                <div class="ml-auto align-self-end mb-1">
-                                    <span class="text-white">
-                                        <i class="fas fa-caret-up text-white mr-1"></i>
-                                        2.41
-                                    </span>
+                                    <i class="text-white op-7" data-feather="film"></i>
+                                    <span class="text-white op-7 d-block my-3">Total Movies</span>
+                                    <h3 class="text-white mb-0">@ViewBag.TotalMovies</h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6">
+                        <div class="col-lg-4 col-md-6">
                             <div class="d-flex p-3">
                                 <div>
-                                    <i class="text-white op-7" data-feather="user-plus"></i>
-                                    <span class="text-white op-7 d-block my-3">New Customers</span>
-                                    <h3 class="text-white mb-0">180</h3>
-                                </div>
-                                <div class="ml-auto align-self-end mb-1">
-                                    <span class="text-white">
-                                        <i class="fas fa-caret-down text-white mr-1"></i>
-                                        2.41
-                                    </span>
+                                    <i class="text-white op-7" data-feather="folder"></i>
+                                    <span class="text-white op-7 d-block my-3">Total Categories</span>
+                                    <h3 class="text-white mb-0">@ViewBag.TotalCategories</h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6">
+                        <div class="col-lg-4 col-md-6">
                             <div class="d-flex p-3">
                                 <div>
-                                    <i class="text-white op-7" data-feather="cloud"></i>
-                                    <span class="text-white op-7 d-block my-3">Profit</span>
-                                    <h3 class="text-white mb-0">5,600</h3>
-                                </div>
-                                <div class="ml-auto align-self-end mb-1">
-                                    <span class="text-white">
-                                        <i class="fas fa-caret-up text-white mr-1"></i>
-                                        2.41
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="d-flex p-3">
-                                <div>
-                                    <i class="text-white op-7" data-feather="briefcase"></i>
-                                    <span class="text-white op-7 d-block my-3">New Customers</span>
-                                    <h3 class="text-white mb-0">180</h3>
-                                </div>
-                                <div class="ml-auto align-self-end mb-1">
-                                    <span class="text-white">
-                                        <i class="fas fa-caret-down text-white mr-1"></i>
-                                        2.41
-                                    </span>
+                                    <i class="text-white op-7" data-feather="users"></i>
+                                    <span class="text-white op-7 d-block my-3">Registered Directors</span>
+                                    <h3 class="text-white mb-0">@ViewBag.TotalDirectors</h3>
                                 </div>
                             </div>
                         </div>
@@ -96,19 +58,18 @@
             </div>
         </div>
     </div>
-    <!-- Sales -->
 
-    <!-- TODO & Chart -->
     <div class="row">
 
-        <!-- TO DO column -->
+        <!--- TO DO --->
         <div class="col-lg-5 col-md-12">
-            <div class="card">
+            <div class="card h-100">
                 <div class="card-body border-bottom">
                     <h4 class="card-title">To Do List</h4>
                     <div class="d-flex align-items-center">
                         <div>
-                            <h3 class="text-info font-light mb-0">5 February 2019</h3>
+                            <!-- Dynamically shows today's date -->
+                            <h3 class="text-info font-light mb-0">@DateTime.Now.ToString("d MMMM yyyy")</h3>
                         </div>
                         <div class="ml-auto">
                             <div class="btn-group" role="group">
@@ -118,170 +79,120 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="todo-widget scrollable" style="height:317px;">
                     <ul class="list-task todo-list list-group m-b-0" data-role="tasklist">
-                        <li class="list-group-item todo-item" data-role="task">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" checked class="custom-control-input" id="customCheck">
-                                <label class="custom-control-label todo-label" for="customCheck">
-                                    <span class="todo-desc">Payment due: warehouse rent</span>
-                                    <span class="delete-task float-right">
-                                        <i class="text-danger"
-                                           data-feather="trash-2"></i>
-                                    </span>
-                                </label>
-                            </div>
-                        </li>
-                        <li class="list-group-item todo-item" data-role="task">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                <label class="custom-control-label todo-label" for="customCheck1">
-                                    <span class="todo-desc">New app test</span>
-                                    <span class="delete-task float-right">
-                                        <i class="text-danger"
-                                           data-feather="trash-2"></i>
-                                    </span>
-                                </label>
-                            </div>
-                        </li>
-                        <li class="list-group-item todo-item" data-role="task">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                <label class="custom-control-label todo-label" for="customCheck2">
-                                    <span class="todo-desc">Meeting with CFO</span>
-                                    <span class="delete-task float-right">
-                                        <i class="text-danger"
-                                           data-feather="trash-2"></i>
-                                    </span>
-                                </label>
-                            </div>
-                        </li>
-                        <li class="list-group-item todo-item" data-role="task">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck3">
-                                <label class="custom-control-label todo-label" for="customCheck3">
-                                    <span class="todo-desc">Payment due: bike rent</span>
-                                    <span class="delete-task float-right">
-                                        <i class="text-danger"
-                                           data-feather="trash-2"></i>
-                                    </span>
-                                </label>
-                            </div>
-                        </li>
-                        <li class="list-group-item todo-item" data-role="task">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck4">
-                                <label class="custom-control-label todo-label" for="customCheck4">
-                                    <span class="todo-desc">Meeting with purchase department 3 PM</span>
-                                    <span class="delete-task float-right">
-                                        <i class="text-danger"
-                                           data-feather="trash-2"></i>
-                                    </span>
-                                </label>
-                            </div>
-                        </li>
-                        <li class="list-group-item todo-item" data-role="task">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck5">
-                                <label class="custom-control-label todo-label" for="customCheck5">
-                                    <span class="todo-desc">Meeting with workers</span>
-                                    <span class="delete-task float-right">
-                                        <i class="text-danger"
-                                           data-feather="trash-2"></i>
-                                    </span>
-                                </label>
-                            </div>
-                        </li>
+                        @foreach (var todo in ViewBag.Todos)
+                        {
+                            <li class="list-group-item todo-item" data-role="task">
+                                <!-- Added d-flex and w-100 to maintain Mendy's spacing with the new form wrappers -->
+                                <div class="custom-control custom-checkbox d-flex w-100 align-items-center">
+
+                                    <!-- Checkbox / Toggle Form -->
+                                    <form asp-action="ToggleTodo" asp-controller="Dashboard" method="post" class="m-0 p-0 flex-grow-1">
+                                        <input type="hidden" name="id" value="@todo.Id" />
+                                        <input type="checkbox" class="custom-control-input" id="customCheck_@todo.Id" @(todo.IsCompleted ? "checked" : "") onchange="this.closest('form').submit();">
+                                        <label class="custom-control-label todo-label w-100" for="customCheck_@todo.Id">
+                                            <span class="todo-desc" style="@(todo.IsCompleted ? "text-decoration: line-through; color: #adb5bd;" : "")">
+                                                @todo.Description
+                                            </span>
+                                        </label>
+                                    </form>
+
+                                    <!-- Delete Form (Extracted from the label to prevent accidental check toggles) -->
+                                    <form asp-action="DeleteTodo" asp-controller="Dashboard" method="post" class="m-0 p-0 ml-auto">
+                                        <input type="hidden" name="id" value="@todo.Id" />
+                                        <button type="submit" class="btn p-0 border-0 bg-transparent delete-task">
+                                            <i class="text-danger" data-feather="trash-2"></i>
+                                        </button>
+                                    </form>
+
+                                </div>
+                            </li>
+                        }
                     </ul>
                 </div>
+
                 <div class="card-body">
-                    <div class="d-flex align-items-center mt-3">
+                    <form asp-action="AddTodo" asp-controller="Dashboard" method="post" class="d-flex align-items-center mt-3">
                         <div class="custom-input w-100">
-                            <input type="text" class="form-control" placeholder="Type Here">
+                            <input type="text" name="description" class="form-control" placeholder="Type Here" required autocomplete="off">
                         </div>
                         <div class="ml-auto">
-                            <button type="button" class="btn bg-transparent">
-                                <i class="text-info"
-                                   data-feather="plus-circle"></i>
+                            <button type="submit" class="btn bg-transparent border-0 p-2">
+                                <i class="text-info" data-feather="plus-circle"></i>
                             </button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
-
-        <!--- Chart to the right of the TO DO section --->
+        
+        <!--- Chart --->
         <div class="col-lg-7 col-md-12">
-            <div class="card">
+            <div class="card h-100">
                 <div class="card-body">
                     <div class="d-flex align-items-center">
                         <div>
-                            <h4 class="card-title">Product Sales</h4>
-                            <h6 class="card-subtitle mb-0">
-                                Risus commodo viverra maecenas accumsan lacus
-                                vel
-                                facilisis.
-                            </h6>
+                            <h4 class="card-title">Genre Distribution</h4>
+                            <h6 class="card-subtitle mb-0">Top categories by movie count</h6>
                         </div>
-                        <div class="ml-auto">
-                            <div class="dropdown title-dropdown">
-                                <button class="btn btn-link text-muted dropdown-toggle" type="button" id="dd2"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i data-feather="more-horizontal"></i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd2">
-                                    <a class="dropdown-item" href="#">Edit</a>
-                                    <a class="dropdown-item" href="#">Delete</a>
-                                </div>
+                    </div>
+                    <div class="row align-items-center mt-4">
+                        <div class="col-md-7">
+                            <div id="category-chart" class="mt-4" style="height:340px; overflow:hidden; position:relative;">
                             </div>
                         </div>
-                    </div>
-                    <div class="custom-input w-50 mt-3">
-                        <input type="text" class="form-control datepicker" placeholder="Select date">
-                        <i class="form-control-icon" data-feather="calendar"></i>
-                    </div>
-                    <div class="row align-items-center">
-                        <!-- column -->
-                        <div class="col-md-7">
-                            <div id="campaign" class="mt-4" style="height:363px; width:100%;"></div>
-                        </div>
-                        <!-- column -->
                         <div class="col-md-5 ml-auto">
-                            <ul class="list-style-none">
-                                <li>
-                                    <i class="fas fa-circle text-danger font-12 mr-2"></i> <span class="text-dark">Vermont</span>
-                                    <span class="text-muted ml-1">7,32,970</span>
-                                </li>
-                                <li class="mt-4">
-                                    <i class="fas fa-circle text-primary font-12 mr-2"></i>
-                                    <span class="text-dark">Arizona</span> <span class="text-muted ml-1">3,24,520</span>
-                                </li>
-                                <li class="mt-4">
-                                    <i class="fas fa-circle text-purple font-12 mr-2"></i>
-                                    <span class="text-dark">New York</span> <span class="text-muted ml-1">7,87,210</span>
-                                </li>
-                                <li class="mt-4">
-                                    <i class="fas fa-circle text-info font-12 mr-2"></i> <span class="text-dark">Washington</span>
-                                    <span class="text-muted ml-1">2,27,631</span>
-                                </li>
-                                <li class="mt-4">
-                                    <i class="fas fa-circle text-success font-12 mr-2"></i>
-                                    <span class="text-dark">Illinois</span> <span class="text-muted ml-1">5,74,351</span>
-                                </li>
-                                <li class="mt-4">
-                                    <i class="fas fa-circle text-warning font-12 mr-2"></i>
-                                    <span class="text-dark">Nevada</span> <span class="text-muted ml-1">6,98,176</span>
-                                </li>
+                            <ul class="list-style-none" id="chart-legend">
                             </ul>
                         </div>
-                        <!-- column -->
                     </div>
                 </div>
             </div>
         </div>
-    
     </div>
-    <!-- TODO & Chart -->
-
 </div>
-<!-- End Container fluid  -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const labels = @Html.Raw(Json.Serialize(ViewBag.CategoryLabels));
+        const counts = @Html.Raw(Json.Serialize(ViewBag.CategoryCounts));
+
+        const chartData = [];
+        for(let i = 0; i < labels.length; i++) {
+            chartData.push([labels[i], counts[i]]);
+        }
+
+        const colorPalette = ['#fe7842', '#f352d5', '#b974fe', '#32cdfd', '#5ad84a', '#ffb22b'];
+        const colorMap = {};
+        labels.forEach((label, index) => {
+            colorMap[label] = colorPalette[index % colorPalette.length];
+        });
+
+        const legendContainer = document.getElementById('chart-legend');
+        labels.forEach((label, index) => {
+            const li = document.createElement('li');
+            li.className = index === 0 ? '' : 'mt-4';
+            li.innerHTML = `<i class="fas fa-circle font-12 mr-2" style="color: ${colorMap[label]}"></i> <span class="text-dark">${label}</span> <span class="text-muted ml-1">${counts[index]}</span>`;
+            legendContainer.appendChild(li);
+        });
+
+        if (chartData.length > 0) {
+            c3.generate({
+                bindto: '#category-chart',
+                data: {
+                    columns: chartData,
+                    type: 'donut',
+                    colors: colorMap
+                },
+                donut: {
+                    title: "Movies",
+                    width: 55,
+                    label: { show: false }
+                },
+                legend: { show: false }
+            });
+        }
+    });
+</script>
